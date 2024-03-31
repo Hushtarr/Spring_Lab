@@ -4,6 +4,11 @@ import com.github.javafaker.Faker;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @Controller
 @RequestMapping("/lol")
 public class ctrl
@@ -16,16 +21,30 @@ public class ctrl
     @RequestMapping("/player")
     public String Character(Model model)
         {
-        model.addAttribute("player_","Jax");
+        model.addAttribute("player_",new Faker().name().firstName());
         return "Character";
         }
 
     @RequestMapping("/new")
     public String NewChar(Model model)
         {
-        model.addAttribute("First_name",new NewCharacter().firstname);
-        model.addAttribute("Last_name",new NewCharacter().lastname);
-        model.addAttribute("Country",new NewCharacter().country);
+        NewCharacter tes=new NewCharacter();
+        model.addAttribute("First_name",tes.getFirstname());
+        model.addAttribute("Last_name",tes.getLastname());
+        model.addAttribute("Country",tes.getCountry());
+        List<NewCharacter>alist=new ArrayList<>();
+        for (int i = 0; i < 3; i++)
+            {
+            alist.add(new NewCharacter());
+            }
+        model.addAttribute("List",alist);
+
         return "newChar";
+        }
+
+    public NewCharacter generate()
+        {
+        NewCharacter t =new NewCharacter();
+       return t;
         }
     }

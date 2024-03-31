@@ -5,8 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Welcome to League of Legends</h1>
-<a th:href="@{/lol/new}">new character</a>
-<a th:href="@{/lol/player}">All</a>
+<ul th:each="x:${List}"  th:text="${x.Firstname}"></ul>
 </body>
 </html>

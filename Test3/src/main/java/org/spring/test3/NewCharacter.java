@@ -1,17 +1,20 @@
 package org.spring.test3;
 
 import com.github.javafaker.Faker;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
-@Data
+@Getter
+@Setter
 
 public class NewCharacter
     {
-    public String firstname= new Faker().name().firstName();
-    public String lastname=new Faker().name().lastName();;
-    public String country=new Faker().country().name();
-
+        public String firstname,lastname,country;
+    public NewCharacter()
+        {
+        this.firstname = new Faker().name().firstName();
+        this.lastname = new Faker().name().lastName();
+        this.country = new Faker().country().name();
+        }
     }
