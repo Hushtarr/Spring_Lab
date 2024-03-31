@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ol>
+    there you go:
+    <li th:text="${'first name :'+First_name}"></li>
+    <li th:text="${'last name :'+Last_name}"></li>
+    <li th:text="${Country}"></li>
+</ol>
+<a th:href="@{https://www.leagueoflegends.com}">more info</a>
+<a th:href="@{/lol/home}">Back</a>
+</body>
+</html>
