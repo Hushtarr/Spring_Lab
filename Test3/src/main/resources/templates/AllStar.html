@@ -5,6 +5,26 @@
     <title>Title</title>
 </head>
 <body>
-<ul th:each="x:${List}"  th:text="${x.Firstname}"></ul>
+    <table>
+    <thead>
+    <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Country</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="x:${List}">
+        <td th:text="${x.Firstname}"></td>
+        <td th:text="${x.Lastname}"></td>
+        <td th:text="${x.Country}"></td>
+    </tr>
+
+
+    </tbody>
+    </table>
+<a th:href="@{/lol/home}">Back</a>
+
 </body>
 </html>

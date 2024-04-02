@@ -32,19 +32,23 @@ public class ctrl
         model.addAttribute("First_name",tes.getFirstname());
         model.addAttribute("Last_name",tes.getLastname());
         model.addAttribute("Country",tes.getCountry());
-        List<NewCharacter>alist=new ArrayList<>();
-        for (int i = 0; i < 3; i++)
-            {
-            alist.add(new NewCharacter());
-            }
-        model.addAttribute("List",alist);
 
         return "newChar";
         }
 
     public NewCharacter generate()
         {
-        NewCharacter t =new NewCharacter();
-       return t;
+        return new NewCharacter();
+        }
+    @RequestMapping("/all")
+    public String getall(Model model)
+        {
+        List<NewCharacter>alist=new ArrayList<>();
+        for (int i = 0; i < 3; i++)
+            {
+            alist.add(new NewCharacter());
+            }
+        model.addAttribute("List",alist);
+        return "AllStar";
         }
     }
