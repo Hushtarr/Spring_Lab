@@ -13,14 +13,16 @@ public class ctrl
     //Query Parameter
     @RequestMapping("/info")
     public String getinfo(@RequestParam String brand, Model model)
+    // http://localhost:8080/info?brand=Audi
         {
         model.addAttribute("brand",brand);
-        System.out.println(brand);
         return "MyCar";
         }
 
     @RequestMapping("/info1")
     public String getinfo1(@RequestParam(value = "brand",required = false,defaultValue = "Audi") String brand, Model model)
+        // http://localhost:8080/info1?brand=  -> Audi
+        // http://localhost:8080/info1?brand=Bmw  -> Bmw
         {
         model.addAttribute("brand",brand);
         System.out.println(brand);
@@ -29,6 +31,7 @@ public class ctrl
 
     @RequestMapping("/info2")
     public String getinfo2(@RequestParam String brand,@RequestParam int year, Model model)
+            //http://localhost:8080/info?brand=Bmw&year=2017
         {
         model.addAttribute("year",year);
         model.addAttribute("brand",brand);
