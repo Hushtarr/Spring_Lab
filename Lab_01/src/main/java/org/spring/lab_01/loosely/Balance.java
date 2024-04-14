@@ -1,4 +1,20 @@
 package org.spring.lab_01.loosely;
 
-public abstract class Balance {
-}
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.math.BigDecimal;
+import java.util.UUID;
+@Getter
+@Setter
+@AllArgsConstructor
+public abstract class Balance
+    {
+    private UUID userId;
+    private BigDecimal amount;
+
+    public abstract void addBalance(BigDecimal amount);
+
+    }
