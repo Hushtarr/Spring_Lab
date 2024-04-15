@@ -64,5 +64,9 @@ public class Config
 
     6. 处理没有匹配:
 
-        如果 Spring 框架没有找到任何匹配的 Bean，它会抛出异常。*/
+        如果 Spring 框架没有找到任何匹配的 Bean，它会抛出异常。
+
+        @Autowired: 这是一个注解，指示 Spring 框架自动将其他 Bean 注入到该 Bean 中。
+        @Qualifier: 这是一个注解，用于指定要注入的 Bean 的名称或其他标识符。
+*/
     }
