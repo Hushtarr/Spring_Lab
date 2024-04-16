@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.util.Random;
 import java.util.random.RandomGenerator;
 
-public class run
+public class ApplicationRunner
     {
     public static void main(String[] args)
         {
@@ -21,7 +21,7 @@ public class run
         Product milk =container.getBean(Product.class);
         milk.setName("milk");
         milk.setPrice(BigDecimal.valueOf(2));
-        milk.setQuantity(10);
+
 
 
 
