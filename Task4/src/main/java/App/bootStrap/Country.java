@@ -5,7 +5,8 @@ import java.util.List;
 
 public class Country
     {
-    public static List<String> getList() {
+    public static List<String> getList()
+    {
     List<String> countries = new ArrayList<>();
     countries.add("United States");
     countries.add("Canada");

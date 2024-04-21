@@ -37,23 +37,21 @@ public class ctrl
         // <th:unless="${condition} == ??? " th:text="!!!" />
 
 
-//        model.addAttribute("countries", Country.getList());
-        model.addAttribute("employee_info",new employeeModel());
+        model.addAttribute("countries", Country.getList());
+        //model.addAttribute("employee_info",new employeeModel());
         return "registerPage";
         }
 
     @PostMapping("/registerDone")
-    public String employeeRegisterDone(@Valid employeeModel employeeModel, BindingResult bindingResult)
+    public String employeeRegisterDone(@ModelAttribute("employee_info") @Valid employeeModel employeeModel, BindingResult bindingResult)
         {
         if (bindingResult.hasErrors())
             {
-            return "/registerPage";
+            return "registerPage";
             }
         service.saveInfo(employeeModel);
-        return "/redirect:allInfo";
+        return "redirect:allInfo";
         }
-            //model.addAttribute("countries", Country.getList());
-//            return "redirect:register";
 
     @GetMapping("/allInfo")
     public String info(Model model)

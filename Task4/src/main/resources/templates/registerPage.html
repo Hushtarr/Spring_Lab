@@ -65,7 +65,7 @@
                         <div class="form-group col-md-6">
                             <label for="inputState">Apply for</label>
                                 <select id="inputState" th:field="*{employee_state}">
-                                    <option value=" " selected>select a country</option>
+                                    <option value="" selected>select a country</option>
                                     <option th:each="country : ${countries}" th:value="${country}" th:text="${country} "></option>
                                 </select>
 
@@ -73,6 +73,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Send</button>
                 </form>
+
 
             </div>
         </div>
