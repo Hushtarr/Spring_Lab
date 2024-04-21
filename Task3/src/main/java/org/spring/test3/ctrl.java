@@ -18,6 +18,7 @@ public class ctrl
         {
         return "Welcome";
         }
+
     @RequestMapping("/player")
     public String Character(Model model)
         {
@@ -36,10 +37,6 @@ public class ctrl
         return "newChar";
         }
 
-    public NewCharacter generate()
-        {
-        return new NewCharacter();
-        }
     @RequestMapping("/all")
     public String getall(Model model)
         {
