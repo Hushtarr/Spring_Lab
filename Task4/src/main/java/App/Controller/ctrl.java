@@ -38,15 +38,18 @@ public class ctrl
 
 
         model.addAttribute("countries", Country.getList());
-        //model.addAttribute("employee_info",new employeeModel());
+        model.addAttribute("employee_info",new employeeModel());
         return "registerPage";
         }
 
     @PostMapping("/registerDone")
-    public String employeeRegisterDone(@ModelAttribute("employee_info") @Valid employeeModel employeeModel, BindingResult bindingResult)
+    public String employeeRegisterDone(@ModelAttribute("employee_info") @Valid employeeModel employeeModel, BindingResult bindingResult,Model model)
         {
         if (bindingResult.hasErrors())
             {
+            model.addAttribute("countries", Country.getList());
+            //如果页面有错误就要重新加载一次属性,否则returnPage会丢失该属性
+            //因为returnpage是在employeeRegisterDone这个方法里,而这个方法不加一个列表属性给到前端的话就无法显示
             return "registerPage";
             }
         service.saveInfo(employeeModel);
@@ -64,7 +67,7 @@ public class ctrl
     public void general(Model model)
         {
         model.addAttribute("title","Employee");
-        model.addAttribute("countries", Country.getList());
+       // model.addAttribute("countries", Country.getList());
         /*Map<String,String>countries = new HashMap<>();
         countries.put("USA","US");
         countries.put("Europe","EU");

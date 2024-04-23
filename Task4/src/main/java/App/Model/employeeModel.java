@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 @Data
 public class employeeModel
     {
-    @NotEmpty
+    @NotEmpty(message = "Cant be empty")
     private String employee_name;
     private String employee_id;
     private String employee_phone;
