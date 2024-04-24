@@ -4,6 +4,6 @@ import org.spring.lab_04.model.Recipe;
 
 public interface Repository
     {
-    boolean saveRecipe(Recipe recipe);
+    boolean save(Recipe recipe);
     }
 
