@@ -1,9 +1,6 @@
 package com.cydeo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,10 +13,10 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 
 public class Balance extends BaseEntity {
-    @Column(precision = 19, scale = 2)
+    @Column(precision = 19, scale = 2) //p-> length of the digit, s-> length of decimal
     private BigDecimal amount;
 
-    @ManyToOne
+    @OneToOne
     private Customer customer;
 
 }
